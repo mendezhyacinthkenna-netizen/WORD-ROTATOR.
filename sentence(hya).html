@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sentence - Integrity</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* Body and layout */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: serif;
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background-image: url('aa.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Container for centering */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* space between p and nav */
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Sentence box */
+p {
+  border: 3px solid green;
+  color: blue;
+  font-size: 50px;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 900px;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 12px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Navigation buttons container */
+.nav {
+  display: flex;
+  justify-content: space-between; /* aligns buttons evenly across the container */
+  align-items: center;
+  width: 100%;
+  max-width: 600px; /* optional: keeps buttons from stretching too wide */
+  gap: 15px; /* spacing between buttons */
+}
+
+/* Navigation buttons style */
+.nav a {
+  flex: 1; /* all buttons take equal width */
+  text-decoration: none;
+  background: green;
+  color: white;
+  padding: 20px 0; /* vertical padding only, width controlled by flex */
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  background: darkgreen;
+  transform: scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <p>
+    A good leader should always act with integrity.
+  </p>
+
+  <div class="nav">
+    <a href="index(hya).html">WORD</a>
+    <a href="definition(hya).html">DEFINITION</a>
+    <a href="sentence(hya).html">SENTENCE</a>
+  </div>
+</div>
+
+<script>
+// Pages array
+const pages = ["index(hya).html", "definition(hya).html", "sentence(hya).html"];
+const displayTime = 20000;
+
+// Get current page
+let currentIndex = pages.indexOf(window.location.pathname.split("/").pop());
+
+// Slide to next page automatically
+setTimeout(() => {
+  let nextIndex = (currentIndex + 1) % pages.length;
+  window.location.href = pages[nextIndex];
+}, displayTime);
+
+</script>
+
+</body>
+</html>

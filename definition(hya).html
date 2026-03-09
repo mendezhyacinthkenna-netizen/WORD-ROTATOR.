@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Definition - Integrity</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* Body and full-page layout */
+body{
+  margin:0;
+  padding:0;
+  font-family: serif;
+
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+
+  background-image: url('aa.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Text box */
+p{
+  border:3px solid green;
+  color:blue;
+  font-size:50px;
+  padding:40px 30px;
+  width:80%;
+  max-width:900px;
+  background-color: rgba(255,255,255,0.75);
+  border-radius:12px;
+  margin-bottom:50px;
+  box-sizing:border-box;
+}
+
+/* Navigation buttons */
+.nav{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;  /* enough spacing to center nicely */
+}
+
+.nav a{
+  text-decoration:none;
+  background:green;
+  color:white;
+  padding:12px 30px;
+  border-radius:12px;
+  font-weight:bold;
+  font-size:15px;
+  transition:0.3s;
+  text-align:center;
+}
+
+.nav a:hover{
+  background:darkgreen;
+  transform:scale(1.05);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<p>
+Integrity <br>
+- means the quality of being honest and having strong moral principles.
+</p>
+
+<div class="nav">
+<a href="index(hya).html">WORD</a>
+<a href="definition(hya).html">DEFINITION</a>
+<a href="sentence(hya).html">SENTENCE</a>
+</div>
+
+<script>
+// Pages array
+const pages = ["index(hya).html", "definition(hya).html", "sentence(hya).html"];
+const displayTime = 20000;
+
+// Get current page
+let currentIndex = pages.indexOf(window.location.pathname.split("/").pop());
+
+// Slide to next page automatically
+setTimeout(() => {
+  let nextIndex = (currentIndex + 1) % pages.length;
+  window.location.href = pages[nextIndex];
+}, displayTime);
+
+</script>
+
+</body>
+</html>
